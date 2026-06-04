@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700;800;900&family=Spline+Sans+Mono:wght@400;500&display=swap');
+
+:root {
+  --navy: #211e57;
+  --accent: #efd64b;
+  --accent-hover: #e6c92e;
+  --accent-ink: #8a7a1e;
+  --bg: #f3f1ec;
+  --radius-card: 6px;
+  --radius-btn: 4px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #211e57;
+  font-family: 'Barlow', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.hmaz-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+a { -webkit-tap-highlight-color: transparent; }
+
+@media (max-width: 900px) {
+  .hmaz-navlinks, .hmaz-navcta { display: none !important; }
+  .hmaz-burger { display: flex !important; }
+  .hmaz-hero { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .hmaz-stats { grid-template-columns: repeat(2, 1fr) !important; row-gap: 28px !important; }
+  .hmaz-sobre { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .hmaz-depo-grid { grid-template-columns: 1fr !important; }
+  .hmaz-foot { grid-template-columns: 1fr 1fr !important; row-gap: 36px !important; }
+}
+@media (max-width: 560px) {
+  .hmaz-container { padding-left: 18px; padding-right: 18px; }
+  .hmaz-stats { grid-template-columns: 1fr 1fr !important; }
+  .hmaz-foot { grid-template-columns: 1fr !important; }
+  .hmaz-cta { flex-direction: column; align-items: flex-start !important; }
+}
