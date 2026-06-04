@@ -19,6 +19,7 @@ export default function SobreSection() {
         <div style={{ position: "relative" }}>
           <Placeholder label="Imagem · equipe / unidade fabril" ratio="4 / 4.4" />
           <div
+            className="hmaz-sobre-badge"
             style={{
               position: "absolute",
               top: -16,

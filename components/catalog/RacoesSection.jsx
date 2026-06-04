@@ -28,6 +28,7 @@ export default function RacoesSection({ cardStyle }) {
 
         <div
           role="tablist"
+          className="hmaz-racoes-tabs"
           style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 16 }}
         >
           {chaves.map((k) => {

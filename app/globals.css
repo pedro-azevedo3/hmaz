@@ -29,18 +29,81 @@ body {
 }
 a { -webkit-tap-highlight-color: transparent; }
 
+/* ── Tablet (≤ 900px) ─────────────────────────────────────────────── */
 @media (max-width: 900px) {
+  /* nav */
   .hmaz-navlinks, .hmaz-navcta { display: none !important; }
   .hmaz-burger { display: flex !important; }
-  .hmaz-hero { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+  /* hero — 1 coluna, tudo centralizado */
+  .hmaz-hero {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    justify-items: center;
+  }
+  .hmaz-hero-text {
+    text-align: center;
+    width: 100%;
+  }
+  .hmaz-hero-text p {
+    max-width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hmaz-hero-btns {
+    justify-content: center !important;
+  }
+  .hmaz-hero-img {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .hmaz-hero-badge {
+    bottom: 10px !important;
+    left: 10px !important;
+  }
+
+  /* stats */
   .hmaz-stats { grid-template-columns: repeat(2, 1fr) !important; row-gap: 28px !important; }
+
+  /* sobre */
   .hmaz-sobre { grid-template-columns: 1fr !important; gap: 40px !important; }
-  .hmaz-depo-grid { grid-template-columns: 1fr !important; }
+  .hmaz-sobre-badge { display: none !important; }
+
+  /* depoimentos — 2 colunas no tablet */
+  .hmaz-depo-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* footer */
   .hmaz-foot { grid-template-columns: 1fr 1fr !important; row-gap: 36px !important; }
 }
+
+/* ── Mobile (≤ 640px) ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* hero — badge some, botões empilham */
+  .hmaz-hero-badge { display: none !important; }
+  .hmaz-hero-btns {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hmaz-hero-btns > * { width: 100% !important; }
+
+  /* depoimentos — 1 coluna */
+  .hmaz-depo-grid { grid-template-columns: 1fr !important; }
+
+  /* tabs de rações — menores */
+  .hmaz-racoes-tabs { gap: 8px !important; }
+  .hmaz-racoes-tabs button {
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ── Mobile pequeno (≤ 560px) ─────────────────────────────────────── */
 @media (max-width: 560px) {
   .hmaz-container { padding-left: 18px; padding-right: 18px; }
-  .hmaz-stats { grid-template-columns: 1fr 1fr !important; }
+  .hmaz-stats {
+    grid-template-columns: 1fr 1fr !important;
+    text-align: center;
+  }
   .hmaz-foot { grid-template-columns: 1fr !important; }
   .hmaz-cta { flex-direction: column; align-items: flex-start !important; }
 }

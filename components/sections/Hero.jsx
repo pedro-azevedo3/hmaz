@@ -27,6 +27,7 @@ export default function Hero({ showGrid = true }) {
           }}
         />
       )}
+
       <div
         className="hmaz-container hmaz-hero"
         style={{
@@ -35,17 +36,19 @@ export default function Hero({ showGrid = true }) {
           gridTemplateColumns: "1.05fr 0.95fr",
           gap: 56,
           alignItems: "center",
-          padding: "clamp(56px, 8vw, 96px) 0",
+          paddingTop: "clamp(56px, 8vw, 96px)",
+          paddingBottom: "clamp(56px, 8vw, 96px)",
         }}
       >
-        <div>
+        {/* coluna de texto */}
+        <div className="hmaz-hero-text">
           <Eyebrow color="var(--accent, #efd64b)">Maquinário & Nutrição Animal</Eyebrow>
           <h1
             style={{
               margin: "22px 0 0",
               fontFamily: "'Archivo Black', sans-serif",
-              fontSize: "clamp(40px, 6vw, 72px)",
-              lineHeight: 0.98,
+              fontSize: "clamp(28px, 7.5vw, 72px)",
+              lineHeight: 1.0,
               letterSpacing: "-0.015em",
               textTransform: "uppercase",
             }}
@@ -57,7 +60,7 @@ export default function Hero({ showGrid = true }) {
             style={{
               margin: "26px 0 0",
               fontFamily: "'Barlow', sans-serif",
-              fontSize: "clamp(17px, 2vw, 20px)",
+              fontSize: "clamp(16px, 2vw, 20px)",
               lineHeight: 1.55,
               color: "rgba(255,255,255,0.82)",
               maxWidth: 520,
@@ -67,7 +70,10 @@ export default function Hero({ showGrid = true }) {
             para aves, equinos e bovinos. Fale direto com nossa equipe e monte a
             solução ideal para o seu rebanho.
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 34 }}>
+          <div
+            className="hmaz-hero-btns"
+            style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 34 }}
+          >
             <WhatsButton href={waLinkGeneric("o catálogo")} variant="accent" size="lg">
               Falar com vendas
             </WhatsButton>
@@ -76,6 +82,7 @@ export default function Hero({ showGrid = true }) {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
+                justifyContent: "center",
                 gap: 10,
                 padding: "16px 26px",
                 fontFamily: "'Barlow', sans-serif",
@@ -91,9 +98,12 @@ export default function Hero({ showGrid = true }) {
             </a>
           </div>
         </div>
-        <div style={{ position: "relative" }}>
+
+        {/* coluna de imagem */}
+        <div className="hmaz-hero-img" style={{ position: "relative" }}>
           <Placeholder label="Imagem · linha de produção / maquinário" ratio="4 / 3.4" tone="dark" />
           <div
+            className="hmaz-hero-badge"
             style={{
               position: "absolute",
               bottom: -18,
@@ -113,6 +123,7 @@ export default function Hero({ showGrid = true }) {
         </div>
       </div>
 
+      {/* faixa de estatísticas */}
       <div style={{ position: "relative", borderTop: "1px solid rgba(255,255,255,0.12)" }}>
         <div
           className="hmaz-container hmaz-stats"
@@ -120,7 +131,8 @@ export default function Hero({ showGrid = true }) {
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: 24,
-            padding: "28px 0",
+            paddingTop: 28,
+            paddingBottom: 28,
           }}
         >
           {ESTATISTICAS.map((s) => (
@@ -128,7 +140,7 @@ export default function Hero({ showGrid = true }) {
               <div
                 style={{
                   fontFamily: "'Archivo Black', sans-serif",
-                  fontSize: "clamp(26px, 3vw, 38px)",
+                  fontSize: "clamp(22px, 3vw, 38px)",
                   color: "var(--accent, #efd64b)",
                   lineHeight: 1,
                 }}

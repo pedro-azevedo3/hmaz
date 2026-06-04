@@ -3,7 +3,7 @@ export default function CardGrid({ children, min = 248 }) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: `repeat(auto-fill, minmax(${min}px, 1fr))`,
+        gridTemplateColumns: `repeat(auto-fill, minmax(min(${min}px, 100%), 1fr))`,
         gap: 22,
       }}
     >
