@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Placeholder from '../ui/Placeholder';
 import WhatsButton from '../ui/WhatsButton';
 import { waLink } from '@/lib/data';
@@ -49,8 +50,18 @@ export default function ProductCard({ produto, cardStyle, accentTag }) {
         ...cardSurface(cardStyle, hover),
       }}
     >
-      <div style={{ position: "relative" }}>
-        <Placeholder label={`Foto · ${produto.cod}`} ratio="4 / 3" />
+      <div style={{ position: "relative", aspectRatio: "4 / 3", width: "100%" }}>
+        {produto.image ? (
+          <Image
+            src={produto.image}
+            alt={produto.nome}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+        ) : (
+          <Placeholder label={`Foto · ${produto.cod}`} ratio="4 / 3" />
+        )}
         <span
           style={{
             position: "absolute",
