@@ -12,7 +12,7 @@ export default function Logo({ light = false }) {
       }}
     >
       <Image
-        src="/logo.png"
+        src={light ? "/logo.png" : "/navbar-icon.png"}
         alt="Grupo HMAZ"
         width={52}
         height={52}
